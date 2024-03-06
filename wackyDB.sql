@@ -7,33 +7,36 @@ CREATE TABLE
         Mobilnummer VARCHAR(20)
     );
 
--- BillettKjøp
-CREATE TABLE
-    BillettKjøp (
-        BillettID INT PRIMARY KEY NOT NULL,
-        KundeProfilID INT,
-        Timestamp DATETIME,
-        FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID)
-    );
-
 -- Billett
 CREATE TABLE
     Billett (
         BillettID INT PRIMARY KEY NOT NULL,
-        StolID INT,
-        KundeType VARCHAR(50),
-        StykkeID INT,
+        StolID INT NOT NULL,
+        Salnummer INT NOT NULL,
+        KundeType VARCHAR(50) NOT NULL,
+        StykkeID INT NOT NULL,
         Timestamp DATETIME,
-        FOREIGN KEY (StolID) REFERENCES Stol (Stolnummer)
+        FOREIGN KEY (StolID) REFERENCES Stol (Stolnummer),
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
+    );
+
+-- BillettKjøp
+CREATE TABLE
+    BillettKjøp (
+        BillettID INT PRIMARY KEY NOT NULL,
+        KundeProfilID INT NOT NULL,
+        Timestamp DATETIME,
+        FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID),
+        FOREIGN KEY (BillettID) REFERENCES Billett (BillettID)
     );
 
 -- Stol
 CREATE TABLE
     Stol (
         Stolnummer INT PRIMARY KEY NOT NULL,
+        Salnummer INT NOT NULL,
         Rad INT,
         Område VARCHAR(50),
-        Salnummer INT,
         FOREIGN KEY (Salnummer) REFERENCES Sal (Salnummer)
     );
 
@@ -45,12 +48,32 @@ CREATE TABLE
         Kapasitet INT
     );
 
--- Forestilling-
+-- Forestilling
 CREATE TABLE
     Forestilling (
         Timestamp DATETIME NOT NULL,
         StykkeID INT NOT NULL,
-        PRIMARY KEY (Timestamp, StykkeID)
+        PRIMARY KEY (Timestamp, StykkeID),
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
+    );
+
+-- Teaterstykke
+CREATE TABLE
+    Teaterstykke (
+        StykkeID INT PRIMARY KEY NOT NULL,
+        Navn VARCHAR(255),
+        Salnummer INT NOT NULL,
+        FOREIGN KEY (Salnummer) REFERENCES Sal (Salnummer)
+    );
+
+-- PrisGruppe
+CREATE TABLE
+    PrisGruppe (
+        StykkeID INT,
+        KundeType VARCHAR(50),
+        Pris DECIMAL(10, 2),
+        PRIMARY KEY (StykkeID, KundeType),
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
 
 -- Akt
@@ -60,7 +83,7 @@ CREATE TABLE
         StykkeID INT NOT NULL,
         Navn VARCHAR(255),
         PRIMARY KEY (Nummer, StykkeID),
-        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
 
 -- Skuespiller
@@ -69,8 +92,8 @@ CREATE TABLE
         SkuespillerID INT PRIMARY KEY NOT NULL,
         Navn VARCHAR(255),
         Epost VARCHAR(255),
-        StykkeID INT,
-        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+        StykkeID INT NOT NULL,
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
 
 -- AndreMedvirkende
@@ -79,9 +102,9 @@ CREATE TABLE
         AnsattID INT PRIMARY KEY NOT NULL,
         Navn VARCHAR(255),
         Epost VARCHAR(255),
-        StykkeID INT,
+        StykkeID INT NOT NULL,
         Status VARCHAR(50),
-        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
 
 -- Rolle
@@ -90,8 +113,9 @@ CREATE TABLE
         StykkeID INT,
         SkuespillerID INT,
         AktNummer INT,
+        RolleNavn VARCHAR(255),
         PRIMARY KEY (StykkeID, SkuespillerID, AktNummer),
-        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID),
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID),
         FOREIGN KEY (SkuespillerID) REFERENCES Skuespiller (SkuespillerID),
         FOREIGN KEY (AktNummer) REFERENCES Akt (Nummer)
     );
