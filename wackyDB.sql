@@ -1,27 +1,97 @@
---tables
--- Table: costumer_profile
+-- KundeProfil
 CREATE TABLE
-    costumer_profile (
-        costumer_id INT PRIMARY KEY,
-        phone_number VARCHAR(20) UNIQUE NOT NULL,
-        name VARCHAR(255) NOT NULL,
-        address VARCHAR(255) NOT NULL,
+    KundeProfil (
+        KundeID INT PRIMARY KEY NOT NULL,
+        Navn VARCHAR(255),
+        Adresse VARCHAR(255),
+        Mobilnummer VARCHAR(20)
     );
 
---Table: hall
+-- BillettKjøp
 CREATE TABLE
-    hall (
-        hall_id INT PRIMARY KEY,
-        hall_name VARCHAR(255) NOT NULL,
+    BillettKjøp (
+        BillettID INT PRIMARY KEY NOT NULL,
+        KundeProfilID INT,
+        Timestamp DATETIME,
+        FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID)
     );
 
---Table: chair
+-- Billett
 CREATE TABLE
-    chairs (
-        hall_id INT,
-        seat_number INT NOT NULL,
-        row_number INT NOT NULL,
-        area VARCHAR(255) NOT NULL,
-        PRIMARY KEY (hall_id, row_number, seat_number),
-        CONSTRAINT fk_hall_id FOREIGN KEY (hall_id) REFERENCES hall (hall_id) ON UPDATE CASCADE ON DELETE SET NULL,
-    )
+    Billett (
+        BillettID INT PRIMARY KEY NOT NULL,
+        StolID INT,
+        KundeType VARCHAR(50),
+        StykkeID INT,
+        Timestamp DATETIME,
+        FOREIGN KEY (StolID) REFERENCES Stol (Stolnummer)
+    );
+
+-- Stol
+CREATE TABLE
+    Stol (
+        Stolnummer INT PRIMARY KEY NOT NULL,
+        Rad INT,
+        Område VARCHAR(50),
+        Salnummer INT,
+        FOREIGN KEY (Salnummer) REFERENCES Sal (Salnummer)
+    );
+
+-- Sal
+CREATE TABLE
+    Sal (
+        Salnummer INT PRIMARY KEY NOT NULL,
+        Navn VARCHAR(255),
+        Kapasitet INT
+    );
+
+-- Forestilling-
+CREATE TABLE
+    Forestilling (
+        Timestamp DATETIME NOT NULL,
+        StykkeID INT NOT NULL,
+        PRIMARY KEY (Timestamp, StykkeID)
+    );
+
+-- Akt
+CREATE TABLE
+    Akt (
+        Nummer INT NOT NULL,
+        StykkeID INT NOT NULL,
+        Navn VARCHAR(255),
+        PRIMARY KEY (Nummer, StykkeID),
+        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+    );
+
+-- Skuespiller
+CREATE TABLE
+    Skuespiller (
+        SkuespillerID INT PRIMARY KEY NOT NULL,
+        Navn VARCHAR(255),
+        Epost VARCHAR(255),
+        StykkeID INT,
+        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+    );
+
+-- AndreMedvirkende
+CREATE TABLE
+    AndreMedvirkende (
+        AnsattID INT PRIMARY KEY NOT NULL,
+        Navn VARCHAR(255),
+        Epost VARCHAR(255),
+        StykkeID INT,
+        Status VARCHAR(50),
+        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID)
+    );
+
+-- Rolle
+CREATE TABLE
+    Rolle (
+        StykkeID INT,
+        SkuespillerID INT,
+        AktNummer INT,
+        PRIMARY KEY (StykkeID, SkuespillerID, AktNummer),
+        FOREIGN KEY (StykkeID) REFERENCES Forestilling (StykkeID),
+        FOREIGN KEY (SkuespillerID) REFERENCES Skuespiller (SkuespillerID),
+        FOREIGN KEY (AktNummer) REFERENCES Akt (Nummer)
+    );
