@@ -110,6 +110,7 @@ CREATE TABLE
         Navn VARCHAR(255) NOT NULL,
         Epost VARCHAR(255) NOT NULL,
         StykkeID INT NOT NULL,
+        Oppgave VARCHAR(255) NOT NULL,
         AnsattStatus VARCHAR(50),
         FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
