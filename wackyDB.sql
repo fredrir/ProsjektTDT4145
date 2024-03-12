@@ -17,7 +17,7 @@ CREATE TABLE
         StykkeID INT NOT NULL,
         Tidspunkt DATETIME NOT NULL,
         FOREIGN KEY (StolID, Salnummer) REFERENCES Stol (StolID, Salnummer),
-        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID),
         FOREIGN KEY (KundeType) REFERENCES PrisGruppe (KundeType)
     );
 
