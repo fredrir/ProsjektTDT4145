@@ -32,7 +32,6 @@ INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (10, 'Fabi
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (11, 'Emil Olafsson', 'emil.olafsson@example.com', 1);
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (12, 'Snorre R. Tøndel', 'snorre.tondel@example.com', 1);
 
-
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (13, 'Sunniva Du Mond Nordal', 'sunniva@example.com', '2');
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (14, 'Jo Saberniak', 'jo@example.com', '2');
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (15, 'Marte M. Steinholt', 'marte@example.com', '2');
@@ -41,27 +40,86 @@ INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (17, 'Tor 
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (18, 'Natalie Grøndahl Tangen', 'natalie@example.com', '2');
 INSERT INTO Skuespiller (SkuespillerID, Navn, Epost, StykkeID) VALUES (19, 'Åsmund Flaten', 'asmund@example.com', '2');
 
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1,1,1(2,3,4,5), 'Harald Haakonson');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1,11,1(2,3,4,5), 'Dagfinn Bonde');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1,11,4, 'Jatgeir Skald');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1,6,1(2,5), 'Sigrid');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 1, 1, 'Harald Haakonson'),
+       (1, 1, 2, 'Harald Haakonson'),
+       (1, 1, 3, 'Harald Haakonson'),
+       (1, 1, 4, 'Harald Haakonson'),
+       (1, 1, 5, 'Harald Haakonson');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 11, 1, 'Dagfinn Bonde'),
+       (1, 11, 2, 'Dagfinn Bonde'),
+       (1, 11, 3, 'Dagfinn Bonde'),
+       (1, 11, 4, 'Dagfinn Bonde'),
+       (1, 11, 5, 'Dagfinn Bonde');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 11, 4, 'Jatgeir Skald');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 6, 1, 'Sigrid'),
+       (1, 6, 2, 'Sigrid'),
+       (1, 6, 5, 'Sigrid');
+
 INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 6, 4, 'Ingeborg');
+
 INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 10, 1, 'Baard Bratte');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 3, 1(2,3,4,5), 'Skule Jarl');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 2, 1(3), 'Inga frå Vartejg');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 9, 1(2,3,4,5), 'Paal Flida');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 4, 1(5), 'Ragnhild');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 8, 1(2,3,4,5), 'Gregorius Jonsson');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 5, 1(2,3,4,5), 'Margrete');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 7, 1(2,3), 'Biskop Nikolas');
-INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 12, 3(4,5), 'Peter');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 3, 1, 'Skule Jarl'),
+       (1, 3, 2, 'Skule Jarl'),
+       (1, 3, 3, 'Skule Jarl'),
+       (1, 3, 4, 'Skule Jarl'),
+       (1, 3, 5, 'Skule Jarl');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 2, 1, 'Inga frå Vartejg'),
+       (1, 2, 3, 'Inga frå Vartejg');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 9, 1, 'Paal Flida'),
+       (1, 9, 2, 'Paal Flida'),
+       (1, 9, 3, 'Paal Flida'),
+       (1, 9, 4, 'Paal Flida'),
+       (1, 9, 5, 'Paal Flida');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn) VALUES (1, 4, 1, 'Ragnhild'),
+       (1, 4, 5, 'Ragnhild');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 8, 1, 'Gregorius Jonsson'),
+       (1, 8, 2, 'Gregorius Jonsson'),
+       (1, 8, 3, 'Gregorius Jonsson'),
+       (1, 8, 4, 'Gregorius Jonsson'),
+       (1, 8, 5, 'Gregorius Jonsson');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 5, 1, 'Margrete'),
+       (1, 5, 2, 'Margrete'),
+       (1, 5, 3, 'Margrete'),
+       (1, 5, 4, 'Margrete'),
+       (1, 5, 5, 'Margrete');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 7, 1, 'Biskop Nikolas'),
+       (1, 7, 2, 'Biskop Nikolas'),
+       (1, 7, 3, 'Biskop Nikolas');
+
+INSERT INTO Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
+VALUES (1, 12, 3, 'Peter'),
+       (1, 12, 4, 'Peter'),
+       (1, 12, 5, 'Peter');
+
 
 INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (1, 'Yury Butusov','Yury@example.com', 1, 'Regi og Musikkutvelgelse', 'Fast');
 INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (2, 'Aleksandr Shishkin-Hokusai', 'Aleksandr@example.com', 1, 'Scenografi og kostymer', 'Fast');
 INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (3, 'Eivind Myren', 'Eivind@example.com', 1, 'Lysdesign', 'Fast');
 INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (4, 'Mina Rype Stokke', 'Mina@example.com', 1, 'Dramaturg', 'Fast');
 
-INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (5, 'Kjersti Horn', 
+INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (5, 'Jonas Corell Petersen', 'Jonas@example.com', 2, 'Regi', 'Fast');
+INSERT INTO AndreMedvirkende (AnsattID, Navn, Epost, StykkeID, Oppgave, AnsattStatus) VALUES (6, 'David Gehrt', 'David@example@.com', 2, 'Scenografi og kostymer', 'Fast');
+
 
 INSERT INTO Forestilling (Tidspunkt, StykkeID) VALUES ('2024-01-02 19:00:00', 1); 
 INSERT INTO Forestilling (Tidspunkt, StykkeID) VALUES ('2024-02-02 19:00:00', 1); 
