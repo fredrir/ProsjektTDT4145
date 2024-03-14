@@ -23,10 +23,12 @@ CREATE TABLE
 
 -- BillettKjøp
 CREATE TABLE
-    BillettKjøp (
-        BillettID INT PRIMARY KEY UNIQUE NOT NULL,
+    BillettKjop (
+        BillettID INT NOT NULL,
         KundeProfilID INT NOT NULL,
         Tidspunkt DATETIME NOT NULL,
+        PRIMARY KEY (BillettID, KundeProfilID, Tidspunkt),
+        UNIQUE (BillettID, KundeProfilID, Tidspunkt),
         FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID),
         FOREIGN KEY (BillettID) REFERENCES Billett (BillettID)
     );
@@ -122,8 +124,8 @@ CREATE TABLE
         SkuespillerID INT NOT NULL,
         AktNummer INT NOT NULL,
         RolleNavn VARCHAR(255) NOT NULL,
-        PRIMARY KEY (StykkeID, SkuespillerID, AktNummer),
-        UNIQUE (StykkeID, SkuespillerID, AktNummer),
+        PRIMARY KEY (StykkeID, SkuespillerID, AktNummer, RolleNavn),
+        UNIQUE (StykkeID, SkuespillerID, AktNummer, RolleNavn),
         FOREIGN KEY (SkuespillerID) REFERENCES Skuespiller (SkuespillerID),
         FOREIGN KEY (AktNummer, StykkeID) REFERENCES Akt (Nummer, StykkeID)
     );
