@@ -23,12 +23,12 @@ def scan_seats_gamle_scene(scene_data, date):
             for seat_index, seat in enumerate(line, start=1):
                 if seat in ['1', '0']:
                     cur.execute(f"INSERT OR IGNORE INTO Stol (StolID, Stolnummer, Salnummer, Rad, Område) VALUES ({stol_id}, {seat_index}, 2, {row_index}, '{section_name}')")
-                    cur.execute(f"INSERT OR IGNORE INTO Billett (BillettID, StolID, Salnummer, KundeType, StykkeID, Tidspunkt) VALUES({billett_id}, {stol_id}, 2, 'Ordinaer', 2, '{date}') ")
+                    cur.execute(f"INSERT OR IGNORE INTO Billett (BillettID, StolID, Salnummer, StykkeID, Tidspunkt) VALUES({billett_id}, {stol_id}, 2, 2, '{date}') ")
                     stol_id += 1
                     billett_id += 1
                 if seat == '1' and date == "2024-03-02 19:00:00":
                     cur.execute(f"INSERT OR IGNORE INTO KundeProfil (KundeID, Navn, Adresse, Mobilnummer) VALUES (1, 'Ola Nordmann', 'Osloveien 1', '12345678')")
-                    cur.execute(f"INSERT INTO BillettKjop (BillettID, Tidspunkt, KundeProfilID) VALUES({billett_id}, '{datetime.today()}', 1)")
+                    cur.execute(f"INSERT INTO BillettKjop (BillettID, Tidspunkt, KundeProfilID, KundeType) VALUES({billett_id}, '{datetime.today()}', 1, 'Ordinaer')")
     con.commit()
     con.close()
 
