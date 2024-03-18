@@ -16,8 +16,7 @@ CREATE TABLE
         StykkeID INT NOT NULL,
         Tidspunkt DATETIME NOT NULL,
         FOREIGN KEY (StolID, Salnummer) REFERENCES Stol (StolID, Salnummer),
-        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID),
-        FOREIGN KEY (KundeType) REFERENCES PrisGruppe (KundeType)
+        FOREIGN KEY (StykkeID) REFERENCES Teaterstykke (StykkeID)
     );
 
 -- BillettKjøp
@@ -31,6 +30,7 @@ CREATE TABLE
         UNIQUE (BillettID, KundeProfilID, Tidspunkt),
         FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID),
         FOREIGN KEY (BillettID) REFERENCES Billett (BillettID)
+        FOREIGN KEY (KundeType) REFERENCES PrisGruppe (KundeType)
     );
 
 -- Stol
