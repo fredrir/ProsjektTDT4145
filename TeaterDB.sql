@@ -29,7 +29,7 @@ CREATE TABLE
         PRIMARY KEY (BillettID, KundeProfilID, Tidspunkt),
         UNIQUE (BillettID, KundeProfilID, Tidspunkt),
         FOREIGN KEY (KundeProfilID) REFERENCES KundeProfil (KundeID),
-        FOREIGN KEY (BillettID) REFERENCES Billett (BillettID)
+        FOREIGN KEY (BillettID) REFERENCES Billett (BillettID),
         FOREIGN KEY (KundeType) REFERENCES PrisGruppe (KundeType)
     );
 
@@ -129,4 +129,3 @@ CREATE TABLE
         FOREIGN KEY (SkuespillerID) REFERENCES Skuespiller (SkuespillerID),
         FOREIGN KEY (AktNummer, StykkeID) REFERENCES Akt (Nummer, StykkeID)
     );
-

@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 def buy_9_tickets():
-    con = sqlite3.connect('test.db')
+    con = sqlite3.connect('fredrik.db')
     cur = con.cursor()
 
     # Identify rows that have the required number of available seats
@@ -22,7 +22,7 @@ def buy_9_tickets():
             SELECT B.BillettID
             FROM Billett B
             JOIN Stol S ON B.StolID = S.StolID
-            WHERE B.StykkeID = + AND B.BillettID NOT IN (SELECT BillettID FROM BillettKjop) AND S.Rad = ?
+            WHERE B.StykkeID = 2 AND B.BillettID NOT IN (SELECT BillettID FROM BillettKjop) AND S.Rad = ?
             LIMIT 9
         """, (rows[0][0],))
         missing_tickets = cur.fetchall()
@@ -30,7 +30,7 @@ def buy_9_tickets():
         # Add missing tickets to BillettKjop table
         for ticket in missing_tickets:
             billett_id = ticket[0]
-            cur.execute(f"INSERT INTO BillettKjop (BillettID, Tidspunkt, KundeProfilID) VALUES({billett_id}, '{datetime.now()}', 1)")
+            cur.execute(f"INSERT INTO BillettKjop (BillettID, Tidspunkt, KundeProfilID, KundeType) VALUES({billett_id}, '{datetime.now()}', 1, 'Ordinaer')")
 
     con.commit()
     con.close()
