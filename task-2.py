@@ -1,8 +1,10 @@
 import sqlite3
 from datetime import datetime
 
+db_path = "fredrik.db"
+
 def scan_seats_gamle_scene(scene_data, date):
-    con = sqlite3.connect('fredrik.db')
+    con = sqlite3.connect(db_path)
     cur = con.cursor()
     stol_id = 1
     billett_id = 517
@@ -33,7 +35,7 @@ def scan_seats_gamle_scene(scene_data, date):
     con.close()
     
 def scan_seats_hovedscenen(scene_data, date):
-    con = sqlite3.connect('fredrik.db')
+    con = sqlite3.connect(db_path)
     cur = con.cursor()
     stol_id = 1
 
