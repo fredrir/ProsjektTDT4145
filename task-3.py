@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 def buy_9_tickets():
-    con = sqlite3.connect('fredrik.db')
+    con = sqlite3.connect('pelle.db')
     cur = con.cursor()
 
     cur.execute("""
