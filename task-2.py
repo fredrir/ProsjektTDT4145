@@ -1,7 +1,7 @@
 import sqlite3
 from datetime import datetime
 
-db_path = "pelle.db"
+db_path = "TeaterDB.db"
 
 def scan_seats_gamle_scene(scene_data, date):
     con = sqlite3.connect(db_path)

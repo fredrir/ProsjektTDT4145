@@ -1,7 +1,7 @@
 import sqlite3
 
 def most_sold_performances ():
-    conn = sqlite3.connect('pelle.db')
+    conn = sqlite3.connect('TeaterDB.db')
     cursor = conn.cursor()
 
     query = '''

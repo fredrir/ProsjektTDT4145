@@ -1,7 +1,7 @@
 import sqlite3
 
 def find_actors_who_played_together(actor_name):
-    conn = sqlite3.connect('nico.db')
+    conn = sqlite3.connect('TeaterDB.db')
     cursor = conn.cursor()
 
     query = '''

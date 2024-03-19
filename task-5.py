@@ -1,7 +1,7 @@
 import sqlite3
 
 def performing_actors():
-    conn = sqlite3.connect('fredrik.db')
+    conn = sqlite3.connect('TeaterDB.db')
     cursor = conn.cursor()
 
     query = '''
