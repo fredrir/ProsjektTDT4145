@@ -1,15 +1,14 @@
 import sqlite3
 
 def find_actors_who_played_together(actor_name):
-    conn = sqlite3.connect('fredrik.db')
+    conn = sqlite3.connect('nico.db')
     cursor = conn.cursor()
 
     query = '''
-    SELECT
+    SELECT DISTINCT
         s1.Navn AS Actor1,
         s2.Navn AS Actor2,
-        t.Navn AS Play,
-        a.Navn AS Act
+        t.Navn AS Play
     FROM
         Rolle r1
     INNER JOIN Rolle r2 ON
@@ -20,14 +19,12 @@ def find_actors_who_played_together(actor_name):
         r2.SkuespillerID = s2.SkuespillerID
     INNER JOIN Teaterstykke t ON
         r1.StykkeID = t.StykkeID
-    INNER JOIN Akt a ON
-        r1.StykkeID = a.StykkeID AND r1.AktNummer = a.Nummer
     WHERE
         s1.Navn = ? OR s2.Navn = ?
     GROUP BY
-        Actor1, Actor2, Play, Act
+        s1.Navn, s2.Navn, t.Navn
     ORDER BY
-        Play, Act;
+        t.Navn, s1.Navn, s2.Navn;
     '''
 
     cursor.execute(query, (actor_name, actor_name))
@@ -36,7 +33,7 @@ def find_actors_who_played_together(actor_name):
 
     if results:
         for row in results:
-            print(f"{row[0]} og {row[1]} | {row[2]} | {row[3]}")
+            print(f"{row[0]} og {row[1]} | {row[2]}")
     else:
         print(f"No results found for {actor_name}.")
 
