@@ -57,43 +57,14 @@
    Kongsemnene | 65
 
 7. fredrir@fredrir-Swift-SF314-43:~/Projects/WackyDB$ /bin/python3 /home/fredrir/Projects/WackyDB/task-7.py
-   Arturo Scotti og Emil Olafsson | Kongsemnene | Akt 1
-   Arturo Scotti og Emma C. Deichmann | Kongsemnene | Akt 1
-   Arturo Scotti og Fabian H. Lunde | Kongsemnene | Akt 1
-   Arturo Scotti og Hans Petter Nilsen | Kongsemnene | Akt 1
-   Arturo Scotti og Ingunn B.S Øyen | Kongsemnene | Akt 1
-   Arturo Scotti og Isak H. Sørensen | Kongsemnene | Akt 1
-   Arturo Scotti og Madeleine B. Nilsen | Kongsemnene | Akt 1
-   Arturo Scotti og Per B. Gulliksen | Kongsemnene | Akt 1
-   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene | Akt 1
-   Arturo Scotti og Thomas J. Takyi | Kongsemnene | Akt 1
-   Arturo Scotti og Emil Olafsson | Kongsemnene | Akt 2
-   Arturo Scotti og Emma C. Deichmann | Kongsemnene | Akt 2
-   Arturo Scotti og Hans Petter Nilsen | Kongsemnene | Akt 2
-   Arturo Scotti og Isak H. Sørensen | Kongsemnene | Akt 2
-   Arturo Scotti og Per B. Gulliksen | Kongsemnene | Akt 2
-   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene | Akt 2
-   Arturo Scotti og Thomas J. Takyi | Kongsemnene | Akt 2
-   Arturo Scotti og Emil Olafsson | Kongsemnene | Akt 3
-   Arturo Scotti og Hans Petter Nilsen | Kongsemnene | Akt 3
-   Arturo Scotti og Ingunn B.S Øyen | Kongsemnene | Akt 3
-   Arturo Scotti og Isak H. Sørensen | Kongsemnene | Akt 3
-   Arturo Scotti og Per B. Gulliksen | Kongsemnene | Akt 3
-   Arturo Scotti og Snorre R. Tøndel | Kongsemnene | Akt 3
-   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene | Akt 3
-   Arturo Scotti og Thomas J. Takyi | Kongsemnene | Akt 3
-   Arturo Scotti og Emil Olafsson | Kongsemnene | Akt 4
-   Arturo Scotti og Emma C. Deichmann | Kongsemnene | Akt 4
-   Arturo Scotti og Hans Petter Nilsen | Kongsemnene | Akt 4
-   Arturo Scotti og Isak H. Sørensen | Kongsemnene | Akt 4
-   Arturo Scotti og Per B. Gulliksen | Kongsemnene | Akt 4
-   Arturo Scotti og Snorre R. Tøndel | Kongsemnene | Akt 4
-   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene | Akt 4
-   Arturo Scotti og Emil Olafsson | Kongsemnene | Akt 5
-   Arturo Scotti og Emma C. Deichmann | Kongsemnene | Akt 5
-   Arturo Scotti og Hans Petter Nilsen | Kongsemnene | Akt 5
-   Arturo Scotti og Isak H. Sørensen | Kongsemnene | Akt 5
-   Arturo Scotti og Madeleine B. Nilsen | Kongsemnene | Akt 5
-   Arturo Scotti og Per B. Gulliksen | Kongsemnene | Akt 5
-   Arturo Scotti og Snorre R. Tøndel | Kongsemnene | Akt 5
-   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene | Akt 5
+   Arturo Scotti og Emil Olafsson | Kongsemnene
+   Arturo Scotti og Emma C. Deichmann | Kongsemnene
+   Arturo Scotti og Fabian H. Lunde | Kongsemnene
+   Arturo Scotti og Hans Petter Nilsen | Kongsemnene
+   Arturo Scotti og Ingunn B.S Øyen | Kongsemnene
+   Arturo Scotti og Isak H. Sørensen | Kongsemnene
+   Arturo Scotti og Madeleine B. Nilsen | Kongsemnene
+   Arturo Scotti og Per B. Gulliksen | Kongsemnene
+   Arturo Scotti og Snorre R. Tøndel | Kongsemnene
+   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene
+   Arturo Scotti og Thomas J. Takyi | Kongsemnene
