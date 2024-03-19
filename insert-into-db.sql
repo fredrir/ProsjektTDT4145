@@ -113,32 +113,26 @@ VALUES
 INSERT INTO
     Skuespiller (SkuespillerID, Navn, Epost, StykkeID)
 VALUES
-    (
-        13,
-        'Sunniva Du Mond Nordal',
-        'sunniva@example.com',
-        '2'
-    ),
-    (14, 'Jo Saberniak', 'jo@example.com', '2'),
-    (
-        15,
-        'Marte M. Steinholt',
-        'marte@example.com',
-        '2'
-    ),
-    (16, 'Trond-Ove Skrødal', 'trond@example.com', '2'),
-    (17, 'Tor Ivar Hagen', 'tor@example.com', '2'),
-    (
-        18,
-        'Natalie Grøndahl Tangen',
-        'natalie@example.com',
-        '2'
-    ),
-    (19, 'Åsmund Flaten', 'asmund@example.com', '2');
+    (13, 'Sunniva Du Mond Nordal', 'sunniva@example.com', 2),
+    (14, 'Jo Saberniak', 'jo@example.com', 2),
+    (15,'Marte M. Steinholt','marte@example.com',2),
+    (16, 'Trond-Ove Skrødal', 'trond@example.com', 2),
+    (17, 'Tor Ivar Hagen', 'tor@example.com', 2),
+    (18,'Natalie Grøndahl Tangen', 'natalie@example.com', 2),
+    (19, 'Åsmund Flaten', 'asmund@example.com', 2);
 
 INSERT INTO
     Rolle (StykkeID, SkuespillerID, AktNummer, Rollenavn)
 VALUES
+    (2, 13, 1, 'Sunniva Du Mond Nordal'),
+    (2, 14, 1, 'Jo Saberniak'),
+    (2, 15, 1, 'Marte M. Steinholt'),
+    (2, 16, 1, 'Trond-Ove Skrødal'),
+    (2, 17, 1, 'Tor Ivar Hagen'),
+    (2, 18, 1, 'Natalie Grøndahl Tangen'),
+    (2, 19, 1, 'Åsmund Flaten'),
+
+
     (1, 1, 1, 'Harald Haakonson'),
     (1, 1, 2, 'Harald Haakonson'),
     (1, 1, 3, 'Harald Haakonson'),
