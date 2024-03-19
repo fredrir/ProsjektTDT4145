@@ -10,8 +10,9 @@
    - Setter inn salene, sammen med stoler, teaterstykker, forestillinger, akter, roller, skuespillere og andre medvirkende, slik det er beskrevet i oppgaven
 
 ### Kjør i koden:
+
 3. Kjør begge task-2.py
-    * Scanner setene fra gamle-scene og hovedscenen og legger til stoler, samt billetter og billettkjøp fra forestillingene som foregår "2024-03-02 19:00:00". Tilfredsstiller brukerhistorie 2.
+   - Scanner setene fra gamle-scene og hovedscenen og legger til stoler, samt billetter og billettkjøp fra forestillingene som foregår "2024-03-02 19:00:00". Tilfredsstiller brukerhistorie 2.
 4. Kjør task-3.py
    - Tilfredsstiller brukerhistorie 3
 5. Kjør task-4.py
@@ -26,9 +27,8 @@
 ### Tekstlige resultater fra brukerhistorier:
 
 4. fredrir@fredrir-Swift-SF314-43:~/Projects/WackyDB$ /bin/python3 /home/fredrir/Projects/WackyDB/task-4.py
-   Kongsemnene | 2024-03-02 19:00:00 | Billetter solgt: 516
-
-Størst av alt er kjærligheten | 2024-03-02 18:30:00 | Billetter solgt: 332
+   Kongsemnene | 2024-03-02 19:00:00 | Billetter solgt: 65
+   Størst av alt er kjærligheten | 2024-03-02 18:30:00 | Billetter solgt: 36
 
 5. fredrir@fredrir-Swift-SF314-43:~/Projects/WackyDB$ /bin/python3 /home/fredrir/Projects/WackyDB/task-5.py
    Kongsemnene | Arturo Scotti | Rolle: Harald Haakonson

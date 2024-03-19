@@ -1,43 +1,42 @@
 import sqlite3
 from datetime import datetime
 
-db_path = 'fredrik.db'
+db_path = 'pelle.db'
 
 def get_performances_and_ticket_counts(date):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    date = datetime.strptime(date, '%Y-%m-%d')
-
     query = """
     SELECT 
-        Teaterstykke.Navn AS performance_name,
-        Forestilling.Tidspunkt AS performance_time,
-        COUNT(Billett.BillettID) AS tickets_sold
+    T.Navn AS performance_name,
+    F.Tidspunkt AS performance_time,
+    COUNT(BK.BillettID) AS tickets_sold
     FROM 
-        Forestilling
+        Forestilling F
     LEFT JOIN 
-        Teaterstykke ON Forestilling.StykkeID = Teaterstykke.StykkeID
+        Teaterstykke T ON F.StykkeID = T.StykkeID
     LEFT JOIN 
-        Billett ON Forestilling.StykkeID = Billett.StykkeID AND DATE(Billett.Tidspunkt) = DATE(Forestilling.Tidspunkt)
+        Billett B ON F.StykkeID = B.StykkeID AND DATE(B.Tidspunkt) = DATE(F.Tidspunkt)
+    LEFT JOIN 
+        BillettKjop BK ON B.BillettID = BK.BillettID
     WHERE 
-        DATE(Forestilling.Tidspunkt) = ?
+        DATE(F.Tidspunkt) = DATE(?)
     GROUP BY 
-        Forestilling.Tidspunkt, Forestilling.StykkeID
+        F.Tidspunkt, F.StykkeID
     ORDER BY 
         tickets_sold DESC;
     """
 
-    cursor.execute(query, (date.strftime('%Y-%m-%d'),))
+    cursor.execute(query, (date,))
 
     performances = cursor.fetchall()
     if performances:
         for performance in performances:
-            print(f"{performance[0]} | {performance[1]} | Billetter solgt: {performance[2]} \n")
+            print(f"{performance[0]} | {performance[1]} | Billetter solgt: {performance[2]}")
     else:
         print("No performances found on this date.")
 
     conn.close()
-
 
 get_performances_and_ticket_counts('2024-03-02')
