@@ -18,4 +18,16 @@ Muligheter:
   - Skriver ut navn på forstilling, dato og antall solgte plasser sortert på antall plasser i synkende rekkefølge 
 - Python program (og SQL) som tar et skuespillernavn og finner hvilke skuespillere de har spilt med i samme akt
   - Skriver ut nacn på begge og hvilket skuespill det var
+
+
 ## Unwack the Wack!
+
+# Inititalization 
+
+sqlite3 test.db < TeaterDB.sql
+sqlite3 test.db < insert-into-db.sql
+
+
+run both scan-seats.py
+
+#
