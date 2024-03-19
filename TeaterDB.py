@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 def buy_9_tickets():
-    con = sqlite3.connect('test.db')
+    con = sqlite3.connect('fredrik.db')
     cur = con.cursor()
 
     # Identify rows that have the required number of available seats

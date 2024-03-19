@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 def scan_seats_hovedscenen(scene_data, date):
-    con = sqlite3.connect('test.db')
+    con = sqlite3.connect('fredrik.db')
     cur = con.cursor()
     stol_id = 1
 
