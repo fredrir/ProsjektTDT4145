@@ -1,33 +1,26 @@
-# WackyDB
+# TeaterDB
 
-Inkluderer: 
-- 2 saler med stoler teaterstykker, forestillinger, akter, roller, skuespillere og andre medvirkende
-- 2 forestilliger med pre-kjøpte billetter {gamle-scene.txt} og {hovedscenen.txt}
-    - Kjøpt av en "standard bruker"
+# Hvordan kjøre programmet
 
-Muligheter:
-- Kjøpe 9 voksenbiletter til forestillingen for "Størst av alt er kjærligheten" 3. feburar
-  - Setene er på samme rad, men trenger ikke være ved siden av hverandre
-  - Får igjen:
-    - Summen av kostnaden for billettene 
-    - ikke spesifisert i oppgaven men regner med at stolen også må returneres og endre på ledige billetter
-- Ta inn en dato i python og skriver ut hvilke forestillinger som finnes på denne datoen og lister opp hvor mange biletter som er solgt (også med forestillinger uten solgte biletter)
-- SQL query som finner navn på skuespillere som opptrer i de forkjellige teaterstykkene
-  - skriver ut navn på stykke, navn på skuespiller og rolle
-- SQL query som finner hvilke forestillinger som har solgt best
-  - Skriver ut navn på forstilling, dato og antall solgte plasser sortert på antall plasser i synkende rekkefølge 
-- Python program (og SQL) som tar et skuespillernavn og finner hvilke skuespillere de har spilt med i samme akt
-  - Skriver ut nacn på begge og hvilket skuespill det var
-
-
-## Unwack the Wack!
-
-# Inititalization 
-
-sqlite3 test.db < TeaterDB.sql
-sqlite3 test.db < insert-into-db.sql
+Run in terminal:
+1. sqlite3 TeaterDB.db < TeaterDB.sql
+  - Setter tabellene inn i databasen
+2. sqlite3 TeaterDB.db < insert-into-db.sql
+  - Setter inn salene, sammen med stoler, teaterstykker, forestillinger, akter, roller, skuespillere og andre medvirkende,  slik det er beskrevet i oppgaven
+Kjør i koden:
+3. Kjør begge scan-seats-...-.py
+  - Scanner setene fra gamle-scene og hovedscenen og legger til stoler, samt billetter og billettkjøp fra forestillingene som foregår "2024-03-02 19:00:00". Tilfredsstiller brukerhistorie 2.
+4. Kjør task-3.py
+  - Tilfredsstiller brukerhistorie 3
+5. Kjør task-4.py
+  - Tilfredsstiller brukerhistorie 4
+6. Kjør task-5.py
+  - Tilfredsstiller brukerhistorie 5
+7. Kjør task-6.py
+  - Tilfredsstiller brukerhistorie 6
+8. Kjør task-7.py
+  - Tilfredsstiller brukerhistorie 7
 
 
-run both scan-seats.py
 
-#
+
