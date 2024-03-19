@@ -10,11 +10,6 @@ VALUES
     (5, 'Teaterkafeen', 100);
 
 INSERT INTO
-    Stol (StolID, Stolnummer, Salnummer, Rad, Område)
-VALUES
-    (1, 1, 1, 1, 'Nedre');
-
-INSERT INTO
     Teaterstykke (StykkeID, Navn, Salnummer)
 VALUES
     (1, 'Kongsemnene', 1),
@@ -113,12 +108,22 @@ VALUES
 INSERT INTO
     Skuespiller (SkuespillerID, Navn, Epost, StykkeID)
 VALUES
-    (13, 'Sunniva Du Mond Nordal', 'sunniva@example.com', 2),
+    (
+        13,
+        'Sunniva Du Mond Nordal',
+        'sunniva@example.com',
+        2
+    ),
     (14, 'Jo Saberniak', 'jo@example.com', 2),
-    (15,'Marte M. Steinholt','marte@example.com',2),
+    (15, 'Marte M. Steinholt', 'marte@example.com', 2),
     (16, 'Trond-Ove Skrødal', 'trond@example.com', 2),
     (17, 'Tor Ivar Hagen', 'tor@example.com', 2),
-    (18,'Natalie Grøndahl Tangen', 'natalie@example.com', 2),
+    (
+        18,
+        'Natalie Grøndahl Tangen',
+        'natalie@example.com',
+        2
+    ),
     (19, 'Åsmund Flaten', 'asmund@example.com', 2);
 
 INSERT INTO
@@ -131,8 +136,6 @@ VALUES
     (2, 17, 1, 'Tor Ivar Hagen'),
     (2, 18, 1, 'Natalie Grøndahl Tangen'),
     (2, 19, 1, 'Åsmund Flaten'),
-
-
     (1, 1, 1, 'Harald Haakonson'),
     (1, 1, 2, 'Harald Haakonson'),
     (1, 1, 3, 'Harald Haakonson'),

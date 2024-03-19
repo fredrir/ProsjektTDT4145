@@ -1,21 +1,26 @@
 import sqlite3
 
 def most_sold_performances ():
-    conn = sqlite3.connect('fredrik.db')
+    conn = sqlite3.connect('wackyseb.db')
     cursor = conn.cursor()
 
     query = '''
-    SELECT
-        t.Navn AS Play,
-        COUNT(b.BillettID) AS Sold
-    FROM
-        Billett b
-    INNER JOIN Teaterstykke t ON
-        b.StykkeID = t.StykkeID
-    GROUP BY
-        Play
-    ORDER BY
-        Sold DESC;
+    SELECT 
+    T.Navn AS PerformanceName, 
+    F.Tidspunkt AS Date, 
+    COUNT(B.BillettID) AS SeatsSold
+    FROM 
+        Billett B
+    JOIN 
+        BillettKjop BK ON B.BillettID = BK.BillettID
+    JOIN 
+        Forestilling F ON B.StykkeID = F.StykkeID AND B.Tidspunkt = F.Tidspunkt
+    JOIN 
+        Teaterstykke T ON F.StykkeID = T.StykkeID
+    GROUP BY 
+        T.Navn, F.Tidspunkt
+    ORDER BY 
+        SeatsSold DESC;
     '''
 
     cursor.execute(query)
@@ -24,8 +29,8 @@ def most_sold_performances ():
 
     if results:
         for row in results:
-            print(f"{row[0]} | {row[1]}")
+            print(f"{row[0]} | {row[2]}")
     else:
-        print(f"No results found.")
+        print(f"Ingen resultater funnet.")
         
 most_sold_performances()
