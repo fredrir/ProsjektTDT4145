@@ -25,7 +25,7 @@ def get_performances_and_ticket_counts(date):
     GROUP BY 
         Forestilling.Tidspunkt, Forestilling.StykkeID
     ORDER BY 
-        Forestilling.Tidspunkt;
+        tickets_sold DESC;
     """
 
     cursor.execute(query, (date.strftime('%Y-%m-%d'),))
@@ -33,7 +33,7 @@ def get_performances_and_ticket_counts(date):
     performances = cursor.fetchall()
     if performances:
         for performance in performances:
-            print(f"{performance[0]} | {performance[1]} | Billetter solgt: {performance[2]}")
+            print(f"{performance[0]} | {performance[1]} | Billetter solgt: {performance[2]} \n")
     else:
         print("No performances found on this date.")
 
