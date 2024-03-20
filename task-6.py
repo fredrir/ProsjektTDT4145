@@ -6,21 +6,22 @@ def most_sold_performances ():
 
     query = '''
     SELECT 
-    T.Navn AS PerformanceName, 
-    F.Tidspunkt AS Date, 
-    COUNT(B.BillettID) AS SeatsSold
+        T.Navn AS performance_name,
+        F.Tidspunkt AS performance_time,
+        COUNT(BK.BillettID) AS tickets_sold
     FROM 
-        Billett B
-    JOIN 
-        BillettKjop BK ON B.BillettID = BK.BillettID
-    JOIN 
-        Forestilling F ON B.StykkeID = F.StykkeID AND B.Tidspunkt = F.Tidspunkt
+        Forestilling F
     JOIN 
         Teaterstykke T ON F.StykkeID = T.StykkeID
+    LEFT JOIN 
+        Billett B ON F.StykkeID = B.StykkeID AND Date(F.Tidspunkt) = Date(B.Tidspunkt)
+    LEFT JOIN 
+        BillettKjop BK ON B.BillettID = BK.BillettID
     GROUP BY 
         T.Navn, F.Tidspunkt
     ORDER BY 
-        SeatsSold DESC;
+        tickets_sold DESC;
+
     '''
 
     cursor.execute(query)
@@ -29,7 +30,7 @@ def most_sold_performances ():
 
     if results:
         for row in results:
-            print(f"{row[0]} | {row[2]}")
+            print(f"{row[0]} | {row[1]} | {row[2]}")
     else:
         print(f"Ingen resultater funnet.")
         

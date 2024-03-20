@@ -1,0 +1,52 @@
+4. Brukerhistorie
+   Kongsemnene | 2024-03-02 19:00:00 | Billetter solgt: 65
+   Størst av alt er kjærligheten | 2024-03-02 18:30:00 | Billetter solgt: 36
+
+5. Brukerhistorie
+   Kongsemnene | Arturo Scotti | Rolle: Harald Haakonson
+   Kongsemnene | Emil Olafsson | Rolle: Dagfinn Bonde
+   Kongsemnene | Emil Olafsson | Rolle: Jatgeir Skald
+   Kongsemnene | Emma C. Deichmann | Rolle: Ingeborg
+   Kongsemnene | Emma C. Deichmann | Rolle: Sigrid
+   Kongsemnene | Fabian H. Lunde | Rolle: Baard Bratte
+   Kongsemnene | Hans Petter Nilsen | Rolle: Skule Jarl
+   Kongsemnene | Ingunn B.S Øyen | Rolle: Inga frå Vartejg
+   Kongsemnene | Isak H. Sørensen | Rolle: Paal Flida
+   Kongsemnene | Madeleine B. Nilsen | Rolle: Ragnhild
+   Kongsemnene | Per B. Gulliksen | Rolle: Gregorius Jonsson
+   Kongsemnene | Snorre R. Tøndel | Rolle: Peter
+   Kongsemnene | Synnøve F. Eriksen | Rolle: Margrete
+   Kongsemnene | Thomas J. Takyi | Rolle: Biskop Nikolas
+   Størst av alt er kjærligheten | Jo Saberniak | Rolle: Jo Saberniak
+   Størst av alt er kjærligheten | Marte M. Steinholt | Rolle: Marte M. Steinholt
+   Størst av alt er kjærligheten | Natalie Grøndahl Tangen | Rolle: Natalie Grøndahl Tangen
+   Størst av alt er kjærligheten | Sunniva Du Mond Nordal | Rolle: Sunniva Du Mond Nordal
+   Størst av alt er kjærligheten | Tor Ivar Hagen | Rolle: Tor Ivar Hagen
+   Størst av alt er kjærligheten | Trond-Ove Skrødal | Rolle: Trond-Ove Skrødal
+   Størst av alt er kjærligheten | Åsmund Flaten | Rolle: Åsmund Flaten
+
+6. Brukerhistorie
+   Kongsemnene | 2024-03-02 19:00:00 | 65
+   Størst av alt er kjærligheten | 2024-03-02 18:30:00 | 36
+   Kongsemnene | 2024-01-02 19:00:00 | 0
+   Kongsemnene | 2024-02-02 19:00:00 | 0
+   Kongsemnene | 2024-05-02 19:00:00 | 0
+   Kongsemnene | 2024-06-02 19:00:00 | 0
+   Størst av alt er kjærligheten | 2024-06-02 18:30:00 | 0
+   Størst av alt er kjærligheten | 2024-07-02 18:30:00 | 0
+   Størst av alt er kjærligheten | 2024-12-02 18:30:00 | 0
+   Størst av alt er kjærligheten | 2024-13-02 18:30:00 | 0
+   Størst av alt er kjærligheten | 2024-14-02 18:30:00 | 0
+
+7. Brukerhistorie
+   Arturo Scotti og Emil Olafsson | Kongsemnene
+   Arturo Scotti og Emma C. Deichmann | Kongsemnene
+   Arturo Scotti og Fabian H. Lunde | Kongsemnene
+   Arturo Scotti og Hans Petter Nilsen | Kongsemnene
+   Arturo Scotti og Ingunn B.S Øyen | Kongsemnene
+   Arturo Scotti og Isak H. Sørensen | Kongsemnene
+   Arturo Scotti og Madeleine B. Nilsen | Kongsemnene
+   Arturo Scotti og Per B. Gulliksen | Kongsemnene
+   Arturo Scotti og Snorre R. Tøndel | Kongsemnene
+   Arturo Scotti og Synnøve F. Eriksen | Kongsemnene
+   Arturo Scotti og Thomas J. Takyi | Kongsemnene

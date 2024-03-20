@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+import time
 
 def buy_9_tickets():
     con = sqlite3.connect('TeaterDB.db')
@@ -28,6 +29,7 @@ def buy_9_tickets():
         for ticket in missing_tickets:
             billett_id = ticket[0]
             cur.execute(f"INSERT INTO BillettKjop (BillettID, Tidspunkt, KundeProfilID, KundeType) VALUES({billett_id}, '{datetime.now()}', 1, 'Ordinaer')")
+            time.sleep(0.1)
 
     con.commit()
     con.close()
