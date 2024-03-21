@@ -1,4 +1,6 @@
 # TeaterDB
+Gruppe: 189
+Gruppemedlemmer: Sebastian Kemp-Jacobsen, Nicolai Skjerven og Fredrik Hansteen
 
 ## Hvordan kjøre programmet
 
