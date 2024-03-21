@@ -26,3 +26,6 @@ Gruppemedlemmer: Sebastian Kemp-Jacobsen, Nicolai Skjerven og Fredrik Hansteen
 8. Kjør task-7.py
    - Tilfredsstiller brukerhistorie 7
 
+## Tekstlige resultater
+Kan finnes i fil "tekstlige_resultater.txt"
+
